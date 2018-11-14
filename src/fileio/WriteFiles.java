@@ -7,7 +7,10 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class WriteFiles {
@@ -36,7 +39,7 @@ public class WriteFiles {
             // true = append file
             fileWriter = new FileWriter(file.getAbsoluteFile(), true);
             bufferedWriter = new BufferedWriter(fileWriter);
-            for (String line1: line){
+            for (String line1 : line) {
                 bufferedWriter.write(line1 + "\n");
             }
 
@@ -54,5 +57,36 @@ public class WriteFiles {
             }
         }
 
+    }
+
+    public void writePreProcessedData(ArrayList<UserInformations> userList) {
+        File dir;
+        File file;
+        Date date;
+        ArrayList<String> allInformation;
+        DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+        for (UserInformations in : userList) {
+            String dirPath = Constants.getNewDataPath() + "\\" + Long.toString(in.getUserId()) + "\\";
+            dir = new File(dirPath);
+            if (!dir.exists()) {
+                if (dir.mkdir()) {
+                    System.out.println("Directory is created! " + "summary");
+                } else {
+                    System.out.println("Failed to create directory! " + "summary");
+                }
+            }
+            allInformation = new ArrayList<>();
+            // TODO first line
+            for (int i = 0; i < in.getUserActivites().size(); i++) {
+                file = new File(dirPath + in.getUserActivites().get(i).getFileName());
+//                date = new Date();
+//                date = in.getUserActivites().get(i).getCurrentTimestamp();
+                // TODO first line information cont'd
+                for (int j = 0; j < in.getUserActivites().get(i).getOnlineFriendsList().size(); j++){
+                    // TODO collect friends
+                }
+            }
+
+        }
     }
 }
