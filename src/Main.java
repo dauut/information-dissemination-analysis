@@ -22,6 +22,7 @@ public class Main {
         ArrayList<UserInformations> usersList;
         ReadData getUserFromData = new ReadData();
         usersList = getUserFromData.getUserList();
+        wf.writePreProcessedData(usersList);
 //        timeDist.partOfDays(usersList);
 //        timeDist.findDailyActivities(usersList);
 //        wf.writeAllFriends(usersList);
