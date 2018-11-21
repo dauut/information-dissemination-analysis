@@ -63,7 +63,7 @@ public class WriteFiles {
 
     //write processed data
     private void writeFiles(File file, ArrayList<String> s) {
-        System.out.println("Write File = " + file.toString());
+//        System.out.println("Write File = " + file.toString());
         BufferedWriter bufferedWriter = null;
         FileWriter fileWriter = null;
         try {
@@ -102,7 +102,7 @@ public class WriteFiles {
             dir = new File(dirPath);
             if (!dir.exists()) {
                 if (dir.mkdir()) {
-                    System.out.println("Directory is created! " + "summary");
+                    System.out.println("Directory is created! " + dirPath);
                 } else {
                     System.out.println("Failed to create directory! " + "summary");
                 }
