@@ -22,13 +22,19 @@ public class Main {
         ArrayList<UserInformations> usersList;
         ReadData getUserFromData = new ReadData();
         usersList = getUserFromData.getUserList();
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        double seconds = (double) totalTime / 1000000000.0;
+
+        System.out.println("In memory all files time passed in minutes: " + seconds / 60 );
+
         wf.writePreProcessedData(usersList);
 //        timeDist.partOfDays(usersList);
 //        timeDist.findDailyActivities(usersList);
 //        wf.writeAllFriends(usersList);
-        long endTime = System.nanoTime();
-        long totalTime = endTime - startTime;
-        double seconds = (double) totalTime / 1000000000.0;
+        endTime = System.nanoTime();
+        totalTime = endTime - startTime;
+        seconds = (double) totalTime / 1000000000.0;
         System.out.println("seconds = " + seconds);
         System.out.println("minutes = " + seconds / 60);
         System.out.println("hours = " + seconds / 3600);
