@@ -3,7 +3,8 @@ package structure;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-public class UserInformations {
+public class
+UserInformations {
     private long userId;
     private ArrayList<TimeBasedInformation> userActivites = new ArrayList<TimeBasedInformation>();
     private HashSet<Long> allOnlineFriends = new HashSet<>();

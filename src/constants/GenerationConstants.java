@@ -2,7 +2,7 @@ package constants;
 
 public class GenerationConstants {
 
-    private static final long AMOUNT_OF_NEW_USER_ID = 50000;
+    private static final long AMOUNT_OF_NEW_USER_ID = 20000;
     private static final int MAXIMUM_NEW_FRIENDS_NUMER = 650;
     private static final String SIMULATION_START_DATE = "05/28/2014 12:01:00 am";
     private static final String SIMULATION_END_DATE = "06/11/2014 11:59:00 Pm";

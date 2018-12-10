@@ -9,7 +9,7 @@ public final class Constants {
 //    private static final String DATA_PATH = "C:\\Users\\dauut\\Desktop\\face_data";
 
     private static final String STATS_OUTPUT_PATH = "C:\\Users\\dauut\\Desktop\\stats_output\\";
-    private static final String NEW_DATA_PATH = "C:\\Users\\dauut\\Desktop\\new_data\\";
+    private static final String NEW_DATA_PATH = "C:\\\\Users\\\\dauut\\\\Desktop\\\\new_users\\\\";
 
 
     public static String getDataPath() {

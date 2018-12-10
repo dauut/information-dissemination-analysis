@@ -5,10 +5,20 @@ import java.util.Date;
 import java.util.HashSet;
 
 public class TimeBasedInformation {
-//    private int onlineFriendsCount;
+    //    private int onlineFriendsCount;
     private Date currentTimestamp;
     private ArrayList<OnlineFriendsAndStatus> onlineFriendsList = new ArrayList<OnlineFriendsAndStatus>();
-//    private int idleFriendsCount;
+    private ArrayList<Long> onlineFriendsList2 = new ArrayList<>();
+
+    public ArrayList<Long> getOnlineFriendsList2() {
+        return onlineFriendsList2;
+    }
+
+    public void setOnlineFriendsList2(ArrayList<Long> onlineFriendsList2) {
+        this.onlineFriendsList2 = onlineFriendsList2;
+    }
+
+    //    private int idleFriendsCount;
 //    private int activeFriendsCount;
 //    private int mobileUsersCount;
 //    private int webUsersCount;
