@@ -12,12 +12,11 @@ public class WriteNewActivities {
 
     public void writeFiles(UserInformations user) {
         String outputPath = GenerationConstants.getDataOutputPath();
-        outputPath = outputPath + user.getUserId();
+        outputPath = outputPath + user.getUserId() + "\\";
         File file;
         BufferedWriter bufferedWriter = null;
         FileWriter fileWriter = null;
         String fileName;
-        System.out.println("User activities writing...");
         for (int i = 0; i < user.getUserActivites().size(); i++) {
             fileName = String.valueOf(i) + "." + String.valueOf(user.getUserId() + ".txt");
             file = new File(outputPath + fileName);

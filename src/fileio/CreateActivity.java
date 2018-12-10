@@ -9,6 +9,7 @@ import structure.UserInformations;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -43,17 +44,15 @@ public class CreateActivity {
             generatedUserIDList = ca.userIdGenerator(longestUserID); // brand new IDs
 
             for (UserInformations user : usersList) {
+                System.out.println("Total Friends count will be create = " + user.getAllOnlineFriends().size());
                 userAllFriends = new ArrayList<>(user.getAllOnlineFriends());   // all friends of current user
                 for (Long newID : userAllFriends) {
                     brandNewUserAndActivities = new UserInformations();
                     if (!ca.isUserExist(newID, mainUserIDList)) {   // some of users have original userID as friend
                         ca.createDir(String.valueOf(newID));
                         newFriendsSet = ca.collectNewFriends(generatedUserIDList);  // randomly assigned friends
-                        System.out.println("New Friends Set");
                         brandNewUserAndActivities = ca.createTimeLine(newID, user, newFriendsSet);
-                        System.out.println("All user activitites created for user = " + brandNewUserAndActivities.getUserId());
-//                        writeNewActivities.writeFiles(brandNewUserAndActivities);
-                        System.out.println("Finished for user = " + brandNewUserAndActivities.getUserId());
+                        writeNewActivities.writeFiles(brandNewUserAndActivities);
                     } else {
                         System.out.println("User = " + newID + " already exist!");
                     }
@@ -83,7 +82,6 @@ public class CreateActivity {
             }
         }
 
-        System.out.println("Longest User ID in Dataset = " + longestUserID);
         return longestUserID;
     }
 
@@ -175,15 +173,16 @@ public class CreateActivity {
 
 
     private void createDir(String dirPath) {
-        System.out.println("Create dir started");
-        String fullPath = Constants.getNewDataPath() + dirPath;
+        String fullPath = GenerationConstants.getDataOutputPath() + dirPath;
         File dir = new File(fullPath);
         if (!dir.exists()) {
-            if (dir.mkdirs()) {
+            if (dir.mkdir()) {
                 System.out.println("Directory is created! " + dirPath);
             } else {
                 System.out.println("Failed to create directory! " + "summary");
             }
+        }else{
+            System.out.println("Dir Exist = " + dir.toString());
         }
     }
 
