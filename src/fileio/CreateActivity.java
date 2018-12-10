@@ -1,18 +1,13 @@
 package fileio;
 
-import constants.Constants;
 import constants.GenerationConstants;
-import jdk.nashorn.api.tree.WhileLoopTree;
-import structure.OnlineFriendsAndStatus;
 import structure.TimeBasedInformation;
 import structure.UserInformations;
 
 import java.io.File;
 import java.io.IOException;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Random;
 
 public class CreateActivity {
@@ -49,10 +44,11 @@ public class CreateActivity {
                 for (Long newID : userAllFriends) {
                     brandNewUserAndActivities = new UserInformations();
                     if (!ca.isUserExist(newID, mainUserIDList)) {   // some of users have original userID as friend
-                        ca.createDir(String.valueOf(newID));
+                        if(!ca.createDir(String.valueOf(newID))){
                         newFriendsSet = ca.collectNewFriends(generatedUserIDList);  // randomly assigned friends
                         brandNewUserAndActivities = ca.createTimeLine(newID, user, newFriendsSet);
                         writeNewActivities.writeFiles(brandNewUserAndActivities);
+                        }
                     } else {
                         System.out.println("User = " + newID + " already exist!");
                     }
@@ -172,7 +168,7 @@ public class CreateActivity {
     }
 
 
-    private void createDir(String dirPath) {
+    private boolean createDir(String dirPath) {
         String fullPath = GenerationConstants.getDataOutputPath() + dirPath;
         File dir = new File(fullPath);
         if (!dir.exists()) {
@@ -181,9 +177,11 @@ public class CreateActivity {
             } else {
                 System.out.println("Failed to create directory! " + "summary");
             }
-        }else{
+        } else {
             System.out.println("Dir Exist = " + dir.toString());
+            return true;
         }
+        return false;
     }
 
 }
