@@ -34,16 +34,16 @@ public class CommonFriends {
         System.out.println("");
     }
 
-    public HashMap<Long,Integer> findCommonFriendsCounts(ArrayList<HashSet<Long>> theList){
-        HashMap<Long,Integer> friendsInCommonCounts = new HashMap<>();
-
-        for (int i= 0; i < theList.size(); i++){
-            for (int j = 1; j < theList.get(i).size(); j++){
-
-            }
-        }
-
-        return friendsInCommonCounts;
-
-    }
+//    public HashMap<Long,Integer> findCommonFriendsCounts(ArrayList<HashSet<Long>> theList){
+//        HashMap<Long,Integer> friendsInCommonCounts = new HashMap<>();
+//
+//        for (int i= 0; i < theList.size(); i++){
+//            for (int j = 1; j < theList.get(i).size(); j++){
+//
+//            }
+//        }
+//
+//        return friendsInCommonCounts;
+//
+//    }
 }
