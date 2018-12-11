@@ -22,13 +22,13 @@ public class ParseLines {
         TimeBasedInformation timeBasedInformation = new TimeBasedInformation();
         String timestamp = firstLineToken[4] + " " + firstLineToken[5] + " " + firstLineToken[6];
         timeBasedInformation.setTimestamp(timestamp);
-//        try {
-//            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss a");
-//            Date parsedDate = simpleDateFormat.parse(timestamp);
-//            timeBasedInformation.setCurrentTimestamp(parsedDate);
-//        } catch (ParseException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss a");
+            Date parsedDate = simpleDateFormat.parse(timestamp);
+            timeBasedInformation.setCurrentTimestamp(parsedDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
         /*
         //third line has online friends count
