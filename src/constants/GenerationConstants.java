@@ -4,8 +4,6 @@ public class GenerationConstants {
 
     private static final long AMOUNT_OF_NEW_USER_ID = 20000;
     private static final int MAXIMUM_NEW_FRIENDS_NUMER = 100;
-    private static final String SIMULATION_START_DATE = "05/28/2014 12:01:00 am";
-    private static final String SIMULATION_END_DATE = "06/11/2014 11:59:00 Pm";
     private static final String DATA_OUTPUT_PATH = "C:\\Users\\dauut\\Desktop\\cn_data\\new_users\\";
 
     public static String getMainDataPath() {
@@ -22,13 +20,6 @@ public class GenerationConstants {
         return DATA_OUTPUT_PATH;
     }
 
-    public static String getSimulationStartDate() {
-        return SIMULATION_START_DATE;
-    }
-
-    public static String getSimulationEndDate() {
-        return SIMULATION_END_DATE;
-    }
 
     public static int getMaximumNewFriendsNumer() {
         return MAXIMUM_NEW_FRIENDS_NUMER;

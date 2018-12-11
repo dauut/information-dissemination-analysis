@@ -11,6 +11,16 @@ public final class Constants {
     private static final String STATS_OUTPUT_PATH = "C:\\Users\\dauut\\Desktop\\stats_output\\";
     private static final String NEW_DATA_PATH = "C:\\\\Users\\\\dauut\\\\Desktop\\\\new_users\\\\";
 
+    private static final String SIMULATION_START_DATE = "06/03/2014 12:01:00 am";
+    private static final String SIMULATION_END_DATE = "06/04/2014 12:01:00 Pm";
+
+    public static String getSimulationStartDate() {
+        return SIMULATION_START_DATE;
+    }
+
+    public static String getSimulationEndDate() {
+        return SIMULATION_END_DATE;
+    }
 
     public static String getDataPath() {
         return DATA_PATH;

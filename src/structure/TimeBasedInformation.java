@@ -7,6 +7,7 @@ import java.util.HashSet;
 public class TimeBasedInformation {
     //    private int onlineFriendsCount;
     private Date currentTimestamp;
+    private String timestamp;
     private ArrayList<OnlineFriendsAndStatus> onlineFriendsList = new ArrayList<OnlineFriendsAndStatus>();
     private ArrayList<Long> onlineFriendsList2 = new ArrayList<>();
 
@@ -50,6 +51,15 @@ public class TimeBasedInformation {
 //    public void setOnlineFriendsCount(int onlineFriendsCount) {
 //        this.onlineFriendsCount = onlineFriendsCount;
 //    }
+
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
 
     public Date getCurrentTimestamp() {
         return currentTimestamp;

@@ -11,7 +11,10 @@ import java.nio.file.DirectoryStream;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -99,7 +102,7 @@ public class ReadData {
                     }
                     //control start date and end date -- START
                     // we need these dates for check simulation interval ie: 15 days
-/*                    String startDate = Constants.getSimulationStartDate();
+                    String startDate = Constants.getSimulationStartDate();
                     String endDate = Constants.getSimulationEndDate();
                     SimpleDateFormat simpleStartFormat = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss a");
                     Date parsedStartDate = null;
@@ -109,19 +112,19 @@ public class ReadData {
                         parsedEndDate = simpleStartFormat.parse(endDate);
                     } catch (ParseException e) {
                         e.printStackTrace();
-                    }*/
+                    }
                     //control start date and end date -- END
 
                     if (lines.size() > 1) {
                         timeBasedInformation = parseLines.parseLines(lines);
                         timeBasedInformation.setFileName(listOfFiles[j].toString());
                         //add only between two
-//                        if (parsedStartDate != null && parsedEndDate != null &&
-//                                timeBasedInformation.getCurrentTimestamp().after(parsedStartDate) &&
-//                                timeBasedInformation.getCurrentTimestamp().before(parsedEndDate)) {
+                        if (parsedStartDate != null && parsedEndDate != null &&
+                                timeBasedInformation.getCurrentTimestamp().after(parsedStartDate) &&
+                                timeBasedInformation.getCurrentTimestamp().before(parsedEndDate)) {
                         allFriends.addAll(timeBasedInformation.getOnlineFriendsHashSet());
                         timeBasedInformationArrayList.add(timeBasedInformation);
-//                        }
+                        }
                     }
                     scanner.close();
                 } catch (FileNotFoundException e) {

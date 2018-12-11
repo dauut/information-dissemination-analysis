@@ -24,7 +24,8 @@ public class WriteNewActivities {
                 fileWriter = new FileWriter(file.getAbsoluteFile(), true);
                 bufferedWriter = new BufferedWriter(fileWriter);
 
-                bufferedWriter.write("id: " + user.getUserId() + " current time: " + user.getUserActivites().get(i).getCurrentTimestamp()+ "\n\n");
+//                bufferedWriter.write("id: " + user.getUserId() + " current time: " + user.getUserActivites().get(i).getCurrentTimestamp()+ "\n\n");
+                bufferedWriter.write("id: " + user.getUserId() + " current time: " + user.getUserActivites().get(i).getTimestamp()+ "\n\n");
                 bufferedWriter.write("online friends: " + String.valueOf(user.getAllOnlineFriends().size()));
                 for (int j = 0; j < user.getUserActivites().get(i).getOnlineFriendsList2().size(); j++){
                     bufferedWriter.write(String.valueOf(user.getUserActivites().get(i).getOnlineFriendsList2().get(j)) + "\n");

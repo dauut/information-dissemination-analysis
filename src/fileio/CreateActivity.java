@@ -44,10 +44,10 @@ public class CreateActivity {
                 for (Long newID : userAllFriends) {
                     brandNewUserAndActivities = new UserInformations();
                     if (!ca.isUserExist(newID, mainUserIDList)) {   // some of users have original userID as friend
-                        if(!ca.createDir(String.valueOf(newID))){
-                        newFriendsSet = ca.collectNewFriends(generatedUserIDList);  // randomly assigned friends
-                        brandNewUserAndActivities = ca.createTimeLine(newID, user, newFriendsSet);
-                        writeNewActivities.writeFiles(brandNewUserAndActivities);
+                        if (!ca.createDir(String.valueOf(newID))) {
+                            newFriendsSet = ca.collectNewFriends(generatedUserIDList);  // randomly assigned friends
+                            brandNewUserAndActivities = ca.createTimeLine(newID, user, newFriendsSet);
+                            writeNewActivities.writeFiles(brandNewUserAndActivities);
                         }
                     } else {
                         System.out.println("User = " + newID + " already exist!");
@@ -123,7 +123,8 @@ public class CreateActivity {
         ArrayList<TimeBasedInformation> timeBasedInformationArrayList = new ArrayList<>();
         for (int i = 0; i < user.getUserActivites().size(); i++) {
             timeBasedInformation = new TimeBasedInformation();
-            timeBasedInformation.setCurrentTimestamp(user.getUserActivites().get(i).getCurrentTimestamp());
+//            timeBasedInformation.setCurrentTimestamp(user.getUserActivites().get(i).getCurrentTimestamp());
+            timeBasedInformation.setTimestamp(user.getUserActivites().get(i).getTimestamp());
             momentList = momentFriends(newFriendsSet);
             timeBasedInformation.setOnlineFriendsList2(momentList);
             timeBasedInformationArrayList.add(timeBasedInformation);
@@ -139,6 +140,9 @@ public class CreateActivity {
         Random rand = new Random();
 
         int newFriendCount = rand.nextInt(newFriendsSet.size());
+        while (newFriendCount <= 1) {
+            newFriendCount = rand.nextInt(newFriendsSet.size());
+        }
         HashSet<Long> momentSet = new HashSet<>();
         for (int i = 0; i < newFriendCount; i++) {
             momentSet.add(newFriendsList.get(rand.nextInt(newFriendsList.size())));
