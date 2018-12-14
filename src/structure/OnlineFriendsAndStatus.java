@@ -10,7 +10,4 @@ public class OnlineFriendsAndStatus {
     public void setFriendUserID(long friendUserID) {
         this.friendUserID = friendUserID;
     }
-
-
-
 }

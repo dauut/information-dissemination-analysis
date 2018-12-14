@@ -41,7 +41,7 @@ public class ReadData {
             HashSet<Long> allFriends;
 
             user.setUserId(Long.parseLong(listOfUsers[i].getName()));
-            System.out.println("Current user: " + user.getUserId());
+            System.out.println("Current user ID: " + user.getUserId() + " Index = " + i);
             folder = new File(listOfUsers[i].toString()); //all files names
             listOfFiles = folder.listFiles();
             ArrayList<TimeBasedInformation> timeBasedInformationArrayList = new ArrayList<>();
@@ -117,7 +117,7 @@ public class ReadData {
 
                     if (lines.size() > 1) {
                         timeBasedInformation = parseLines.parseLines(lines);
-                        timeBasedInformation.setFileName(listOfFiles[j].toString());
+//                        timeBasedInformation.setFileName(listOfFiles[j].toString());
                         //add only between two
                         if (parsedStartDate != null && parsedEndDate != null &&
                                 timeBasedInformation.getCurrentTimestamp().after(parsedStartDate) &&

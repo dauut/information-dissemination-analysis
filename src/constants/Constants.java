@@ -7,7 +7,7 @@ public final class Constants {
 //    private static final String DATA_PATH = "C:\\Users\\dauut\\Desktop\\3";
 //    private static final String DATA_PATH = "C:\\Users\\dauut\\Desktop\\cn_data\\0";
 //    private static final String DATA_PATH = "C:\\Users\\dauut\\Desktop\\cn_data\\face_data";
-    private static final String DATA_PATH = "C:\\Users\\dauut\\Desktop\\cn_data\\main_data";
+    private static final String DATA_PATH = "C:\\Users\\dauut\\Desktop\\cn_data\\new_users1";
 //    private static final String DATA_PATH = "C:\\Users\\dauut\\Desktop\\face_data";
 
     private static final String STATS_OUTPUT_PATH = "C:\\Users\\dauut\\Desktop\\stats_output\\";

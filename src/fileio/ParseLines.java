@@ -21,7 +21,7 @@ public class ParseLines {
 
         TimeBasedInformation timeBasedInformation = new TimeBasedInformation();
         String timestamp = firstLineToken[4] + " " + firstLineToken[5] + " " + firstLineToken[6];
-        timeBasedInformation.setTimestamp(timestamp);
+//        timeBasedInformation.setTimestamp(timestamp);
         try {
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss a");
             Date parsedDate = simpleDateFormat.parse(timestamp);
@@ -61,7 +61,7 @@ public class ParseLines {
             friensStatusList.add(onlineFriendsAndStatus);
         }
         timeBasedInformation.setOnlineFriendsHashSet(onlineFriendsHashSet);
-        timeBasedInformation.setOnlineFriendsList(friensStatusList);
+//        timeBasedInformation.setOnlineFriendsList(friensStatusList);
 
         return timeBasedInformation;
     }

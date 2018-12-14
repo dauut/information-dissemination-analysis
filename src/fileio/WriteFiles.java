@@ -95,8 +95,8 @@ public class WriteFiles {
         File dir;
         File file = null;
         ArrayList<String> allInformation = null;
-        DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
-        String delims = "\\\\";
+//        DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+//        String delims = "\\\\";
         for (UserInformations in : userList) {
             String dirPath = Constants.getNewDataPath() + "\\" + Long.toString(in.getUserId()) + "\\";
             dir = new File(dirPath);
@@ -107,23 +107,10 @@ public class WriteFiles {
                     System.out.println("Failed to create directory! " + "summary");
                 }
             }
-            for (int i = 0; i < in.getUserActivites().size(); i++) {
-                allInformation = new ArrayList<>();
-                String[] firstLineToken = in.getUserActivites().get(i).getFileName().split(delims);
-                file = new File(dirPath + firstLineToken[6]);
 
-                allInformation.add("id: " + in.getUserId() + " ct: " + df.format(in.getUserActivites().get(i).getCurrentTimestamp()));
-                allInformation.add("");
-                allInformation.add("OF: " + in.getUserActivites().get(i).getOnlineFriendsList().size());
-                for (int j = 0; j < in.getUserActivites().get(i).getOnlineFriendsList().size(); j++) {
-                    allInformation.add(Long.toString(in.getUserActivites().get(i).getOnlineFriendsList().get(j).getFriendUserID()));
-                }
-                allInformation.add("");
-                writeFiles(file, allInformation);
-            }
-            //handle this later
+
         }
 
-
     }
+
 }

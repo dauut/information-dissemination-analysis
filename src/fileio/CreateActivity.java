@@ -34,7 +34,7 @@ public class CreateActivity {
             }
         }
         try {
-            usersList = getUserFromData.getUserList();
+            usersList = getUserFromData.getUserList(1,1);
             longestUserID = ca.getLargestUserID(usersList); // we will start from this number to generate new user IDs
             generatedUserIDList = ca.userIdGenerator(longestUserID); // brand new IDs
 
@@ -124,9 +124,9 @@ public class CreateActivity {
         for (int i = 0; i < user.getUserActivites().size(); i++) {
             timeBasedInformation = new TimeBasedInformation();
 //            timeBasedInformation.setCurrentTimestamp(user.getUserActivites().get(i).getCurrentTimestamp());
-            timeBasedInformation.setTimestamp(user.getUserActivites().get(i).getTimestamp());
+//            timeBasedInformation.setTimestamp(user.getUserActivites().get(i).getTimestamp());
             momentList = momentFriends(newFriendsSet);
-            timeBasedInformation.setOnlineFriendsList2(momentList);
+//            timeBasedInformation.setOnlineFriendsList2(momentList);
             timeBasedInformationArrayList.add(timeBasedInformation);
         }
         newUser.setUserActivites(timeBasedInformationArrayList);
