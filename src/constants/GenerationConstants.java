@@ -4,7 +4,7 @@ public class GenerationConstants {
 
     private static final long AMOUNT_OF_NEW_USER_ID = 20000;
     private static final int MAXIMUM_NEW_FRIENDS_NUMER = 100;
-    private static final String DATA_OUTPUT_PATH = "C:\\Users\\dauut\\Desktop\\cn_data\\new_users\\";
+    private static final String DATA_OUTPUT_PATH = "C:\\Users\\dauut\\Desktop\\cn_data\\new_users1\\";
 
     public static String getMainDataPath() {
         return MAIN_DATA_PATH;

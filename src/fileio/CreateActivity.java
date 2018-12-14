@@ -136,19 +136,24 @@ public class CreateActivity {
 
     private ArrayList<Long> momentFriends(HashSet<Long> newFriendsSet) {
         ArrayList<Long> newFriendsList = new ArrayList<>(newFriendsSet);
-        ArrayList<Long> momentFriendsList;
+        ArrayList<Long> momentFriendsList = null;
         Random rand = new Random();
-
-        int newFriendCount = rand.nextInt(newFriendsSet.size());
-        while (newFriendCount <= 1) {
-            newFriendCount = rand.nextInt(newFriendsSet.size());
-        }
         HashSet<Long> momentSet = new HashSet<>();
-        for (int i = 0; i < newFriendCount; i++) {
-            momentSet.add(newFriendsList.get(rand.nextInt(newFriendsList.size())));
+        if (newFriendsSet.size() > 0) {
+            int newFriendCount = rand.nextInt(newFriendsSet.size());
+//        while (newFriendCount <= 1) {
+//            newFriendCount = rand.nextInt(newFriendsSet.size());
+//        }
+            for (int i = 0; i < newFriendCount; i++) {
+                momentSet.add(newFriendsList.get(rand.nextInt(newFriendsList.size())));
+            }
+            momentFriendsList = new ArrayList<>(momentSet);
+
+            return momentFriendsList;
+        }else {
+            momentFriendsList = new ArrayList<>(momentSet);
+            return momentFriendsList;
         }
-        momentFriendsList = new ArrayList<>(momentSet);
-        return momentFriendsList;
     }
 
 

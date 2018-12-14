@@ -13,7 +13,7 @@ public class CommonFriends {
         File fbUsersFolder = new File("C:\\Users\\dauut\\Desktop\\stats_output");
         File[] listOfFiles = fbUsersFolder.listFiles();
         File file;
-        HashSet<Long> friends = new HashSet<>();
+        HashSet<Long> friends;
         ArrayList<HashSet<Long>> allUsers = new ArrayList<>();
         for (File listOfFile : listOfFiles) {
             friends = new HashSet<>();
@@ -26,24 +26,7 @@ public class CommonFriends {
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
-
             allUsers.add(friends);
         }
-
-
-        System.out.println("");
     }
-
-//    public HashMap<Long,Integer> findCommonFriendsCounts(ArrayList<HashSet<Long>> theList){
-//        HashMap<Long,Integer> friendsInCommonCounts = new HashMap<>();
-//
-//        for (int i= 0; i < theList.size(); i++){
-//            for (int j = 1; j < theList.get(i).size(); j++){
-//
-//            }
-//        }
-//
-//        return friendsInCommonCounts;
-//
-//    }
 }
