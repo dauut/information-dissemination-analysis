@@ -6,3 +6,8 @@ We used a widely known epidemic model, SIR, and Fermi distribution function. We 
 network dynamics such as active times in social networks, information attractiveness, etc. The study showed that high 
 infection with a low recovery rate can cause an infected network. However, we observed that the network tends to 
 recover most of the time.
+
+<p align="center">
+  <img width="460" height="300" src="https://github.com/dauut/information-dissemination-analysis/blob/master/img/result.png?raw=true">
+  <img width="460" height="300" src="https://github.com/dauut/information-dissemination-analysis/blob/master/img/network.png?raw=true">
+</p> 
