@@ -1,6 +1,8 @@
-# information-dissemination-analysis
-#### Information dissemination analysis in complex networks
+# Information Dissemination Analysis in Social Networks
 
-In this project, I used Susceptible-Infectious-Recovered (SIR) model and Fermi Distribution Function in our social network to simulating spreading.
-
-
+Understanding of diffusion dynamics in networks has high importance for different purposes like politics, marketing, 
+influencing and rumor spreading. In this study, we examined information spreading dynamics in real social network data.
+We used a widely known epidemic model, SIR, and Fermi distribution function. We tested these parameters with social 
+network dynamics such as active times in social networks, information attractiveness, etc. The study showed that high 
+infection with a low recovery rate can cause an infected network. However, we observed that the network tends to 
+recover most of the time.
