@@ -8,6 +8,6 @@ infection with a low recovery rate can cause an infected network. However, we ob
 recover most of the time.
 
 <p align="center">
-  <img width="350" height="250" src="https://github.com/dauut/information-dissemination-analysis/blob/master/img/result.png?raw=true">
-  <img width="350" height="250" src="https://github.com/dauut/information-dissemination-analysis/blob/master/img/network2.png?raw=true">
+  <img width="450" height="321" src="https://github.com/dauut/information-dissemination-analysis/blob/master/img/result.png?raw=true">
+  <img width="450" height="321" src="https://github.com/dauut/information-dissemination-analysis/blob/master/img/network2.png?raw=true">
 </p> 
